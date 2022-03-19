@@ -11,8 +11,11 @@ namespace OddServiceTests
         [InlineData(7)]
         public void IsOddMethod_OddNumbers_ReturnsTrue(int number)
         {
+            //Arragne
             var service = new OddServiceImplementation();
+            //Call
             var result = service.IsOdd(number);
+            //Assert
             Assert.True(result);
         }
 
