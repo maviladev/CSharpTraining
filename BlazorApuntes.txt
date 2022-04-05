@@ -1,0 +1,5 @@
+3 Componentes
+31.Introduccion a los componentes
+
+Un componente es una pieza de interfaz de usuario, reutilizable, la cual puede contener lógica.
+Un componente es una clase
