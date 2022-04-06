@@ -14,4 +14,15 @@ El atributo "[Parameter]" permite exponer propiedades para interactuar con infor
 Ej. [Parameter] public Pelicula Pelicula { get; set; }
 
 --3.3 Parámetros arbitrarios
+Se pueden asignar atributos sin necesidad de mapear una propiedad especifica por cada una, 
+esto se logra utilizando la directiva "@attributes", el tipo de la propiedad debe ser un diccionario 
+y al atributo "[Parameter]" se asigna el valor "true" a la propiedad CaptureUnmatchesValues.
+Ej:
+[Parameter(CaptureUnmatchesValues = true)]
+public IDictionary<string, object> ParametrosAdicionales {get; set;}
+
+<input type="text" placeholder="placeholder por defecto" @attributes="ParametrosAdicionales">
+
+Importante recordar que la precedencia de attributos es de derecha a izquierda.
+
 
