@@ -2,10 +2,20 @@
 
 <div>
     <h3>Películas</h3>
-    <ListadoPeliculas />
+    <ListadoPeliculas Peliculas="ObtenerPeliculas()"/>
     
 </div>
 
 @code {
     
+    private List<Pelicula> ObtenerPeliculas()
+    {
+        return new List<Pelicula>()
+    {
+            new Pelicula(){Titulo = "<b>Spider-Man</b>: Far From Home", Lanzamiento  = new DateTime(2022, 7, 2)},
+            new Pelicula(){Titulo = "<i>Moana</i>", Lanzamiento  = new DateTime(2016, 11, 23)},
+            new Pelicula(){Titulo = "Inception", Lanzamiento  = new DateTime(2019, 7, 16)}
+        };
+    }
+
 }

@@ -1,5 +1,17 @@
 3 Componentes
-31.Introduccion a los componentes
+--31.Introduccion a los componentes
 
 Un componente es una pieza de interfaz de usuario, reutilizable, la cual puede contener lógica.
 Un componente es una clase
+
+La directiva page("/") nos permite acceder a un componente por medio de una url.
+
+--3.2 Parámetros
+
+Los parámetros pueden ser:datos, eventos, contenido
+
+El atributo "[Parameter]" permite exponer propiedades para interactuar con informacion externa.
+Ej. [Parameter] public Pelicula Pelicula { get; set; }
+
+--3.3 Parámetros arbitrarios
+

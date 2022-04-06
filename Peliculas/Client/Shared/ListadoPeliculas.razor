@@ -12,29 +12,12 @@
     {
         @foreach (var pelicula in Peliculas)
         {
-            <div>
-                <p>Título: @((MarkupString)pelicula.Titulo)</p>
-                <p>Fecha Lanzamiento: <b>@pelicula.Lanzamiento.ToString("dd MMM yyyy")</b></p>
-            </div>
+           <PeliculaIndividual Pelicula="pelicula" />
         }
     }
 
 @code {
 
-    protected override async Task OnInitializedAsync()
-    {
-        Peliculas = ObtenerPeliculas();
-    }
+    [Parameter] public List<Pelicula> Peliculas { get; set; }
 
-    public List<Pelicula> Peliculas;
-
-    private List<Pelicula> ObtenerPeliculas()
-    {
-        return new List<Pelicula>()
-    {
-            new Pelicula(){Titulo = "<b>Spider-Man</b>: Far From Home", Lanzamiento  = new DateTime(2022, 7, 2)},
-            new Pelicula(){Titulo = "<i>Moana</i>", Lanzamiento  = new DateTime(2016, 11, 23)},
-            new Pelicula(){Titulo = "Inception", Lanzamiento  = new DateTime(2019, 7, 16)}
-        };
-    }
 }

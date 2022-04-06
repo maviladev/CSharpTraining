@@ -1,0 +1,9 @@
+﻿ <div>
+     @*Ojo posible hueco de seguridad*@
+    <p>Título: @((MarkupString)Pelicula.Titulo)</p>
+    <p>Fecha Lanzamiento: <b>@Pelicula.Lanzamiento.ToString("dd MMM yyyy")</b></p>
+</div>
+
+@code {
+    [Parameter] public Pelicula Pelicula { get; set; }
+}
