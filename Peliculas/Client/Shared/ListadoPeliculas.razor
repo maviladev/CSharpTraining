@@ -14,7 +14,7 @@
 
         @foreach (var pelicula in Peliculas)
         {
-           <PeliculaIndividual Pelicula="pelicula"  MostrarBotones="MostrarBotones"/>
+           <PeliculaIndividual Pelicula="pelicula"  MostrarBotones="MostrarBotones" EliminarPelicula="EliminarPelicula"/>
         }
     }
 
@@ -22,5 +22,11 @@
 
     [Parameter] public List<Pelicula> Peliculas { get; set; }
     bool MostrarBotones = true;
+
+    void EliminarPelicula(Pelicula pelicula)
+    {
+        Peliculas.Remove(pelicula);
+        Console.WriteLine($"Se ha eliminado {pelicula.Titulo}");
+    }
 
 }

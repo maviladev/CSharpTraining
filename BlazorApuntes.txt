@@ -28,4 +28,9 @@ Importante recordar que la precedencia de attributos es de derecha a izquierda.
 --3.5 Data Binding
 Usando la directiva @bind permite enlazar una propiedad para usarla de acuerdo a la necesidad
 
+--3.6 EventCallback
+Generando un parametro de tipo EventCallback<T> se puede pasar el metodo/comportamiento que se desea ejecutar como accion.
+El generico es el tipo del parametro a recibir en el metodo que se va a ejecutar.
+
+
 
