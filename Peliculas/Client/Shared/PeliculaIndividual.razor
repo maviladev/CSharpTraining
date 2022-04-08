@@ -2,8 +2,24 @@
      @*Ojo posible hueco de seguridad*@
     <p>Título: @((MarkupString)Pelicula.Titulo)</p>
     <p>Fecha Lanzamiento: <b>@Pelicula.Lanzamiento.ToString("dd MMM yyyy")</b></p>
+    @if (MostrarBotones)
+    {
+        <div>
+            <button @onclick="Eliminar">Borrar</button>
+        </div>
+    }
+    
 </div>
 
 @code {
+
     [Parameter] public Pelicula Pelicula { get; set; }
+    [Parameter] public bool MostrarBotones { get; set; }
+
+    void Eliminar()
+    {
+        
+        Console.WriteLine($"Eliminando la película {Pelicula.Titulo}");
+
+    }
 }
