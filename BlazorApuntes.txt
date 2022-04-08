@@ -32,5 +32,8 @@ Usando la directiva @bind permite enlazar una propiedad para usarla de acuerdo a
 Generando un parametro de tipo EventCallback<T> se puede pasar el metodo/comportamiento que se desea ejecutar como accion.
 El generico es el tipo del parametro a recibir en el metodo que se va a ejecutar.
 
+--3.7 RenderFragment
+El tipo RenderFragment permite exponer una propiedad de un componente para renderizar etiquetas bajo demanda.
+
 
 

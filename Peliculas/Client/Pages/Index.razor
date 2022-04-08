@@ -1,21 +1,44 @@
 ﻿@page "/"
 
 <div>
-    <h3>Películas</h3>
-    <ListadoPeliculas Peliculas="ObtenerPeliculas()"/>
+    <h3>Cargando</h3>
+    <ListadoPeliculas>
+        @*<img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" />
+        <text>Cargando...</text>*@
+        @*<Cargando>
+            <img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" />
+        </Cargando>
+        <NoHayRegistros>
+            <text>Mensaje personalizado: no hay registros</text>
+        </NoHayRegistros>*@
+    </ListadoPeliculas>
+
+    <h3>No hay películas</h3>
+    <ListadoPeliculas Peliculas="ObtenerPeliculas()">
+        @*<img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" />
+        <text>Cargando...</text>*@
+        <Cargando>
+            <img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" />
+        </Cargando>
+        <NoHayRegistros>
+            <text>Mensaje personalizado: no hay registros</text>
+        </NoHayRegistros>
+    </ListadoPeliculas>
     
 </div>
 
 @code {
-    
+
     private List<Pelicula> ObtenerPeliculas()
     {
-        return new List<Pelicula>()
-    {
-            new Pelicula(){Titulo = "<b>Spider-Man</b>: Far From Home", Lanzamiento  = new DateTime(2022, 7, 2)},
-            new Pelicula(){Titulo = "<i>Moana</i>", Lanzamiento  = new DateTime(2016, 11, 23)},
-            new Pelicula(){Titulo = "Inception", Lanzamiento  = new DateTime(2019, 7, 16)}
-        };
+        //return null;
+        return new List<Pelicula>();
+        //    return new List<Pelicula>()
+    //{
+    //        new Pelicula(){Titulo = "<b>Spider-Man</b>: Far From Home", Lanzamiento  = new DateTime(2022, 7, 2)},
+    //        new Pelicula(){Titulo = "<i>Moana</i>", Lanzamiento  = new DateTime(2016, 11, 23)},
+    //        new Pelicula(){Titulo = "Inception", Lanzamiento  = new DateTime(2019, 7, 16)}
+    //    };
     }
 
 } 
