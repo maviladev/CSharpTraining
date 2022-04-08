@@ -25,4 +25,7 @@ public IDictionary<string, object> ParametrosAdicionales {get; set;}
 
 Importante recordar que la precedencia de attributos es de derecha a izquierda.
 
+--3.5 Data Binding
+Usando la directiva @bind permite enlazar una propiedad para usarla de acuerdo a la necesidad
+
 
