@@ -1,13 +1,10 @@
 ﻿
 @if (Peliculas == null)
     {
-        @*<img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" />
-        <text>Cargando...</text>*@
     @Cargando
 }
 else if (Peliculas.Count == 0)
 {
-    @*<text>No hay registros para mostrar...</text>*@
     @if (NoHayRegistros == null)
     {
         <text>No hay registros para mostrar...</text>
