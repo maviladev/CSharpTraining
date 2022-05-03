@@ -61,5 +61,23 @@ namespace UnitTestingLibrary
             Assert.That(isEven, Is.EqualTo(true));
 
         }
+
+        [Test]
+        [TestCase(4)]   // For each test case will be an execution of the method
+        [TestCase(6)]   // In case we need more params, just include it like this
+        [TestCase(20)]  // [TestCase(2,5)]
+        public void IsEvenNumber_InputEvenInteger_ReturnTrue(int evenNumber)
+        {
+            //Arrange
+            Operation op = new();
+
+            //Act
+            bool isEven = op.IsEvenNumber(evenNumber);
+
+            //Assert
+            Assert.IsTrue(isEven);
+            Assert.That(isEven, Is.EqualTo(true));
+
+        }
     }
 }
