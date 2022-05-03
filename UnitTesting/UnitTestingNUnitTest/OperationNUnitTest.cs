@@ -48,7 +48,7 @@ namespace UnitTestingLibrary
 
         [Test]
         [TestCase(3, ExpectedResult = false)]
-        [TestCase(5, ExpectedResult = true)]
+        [TestCase(5, ExpectedResult = false)]
         [TestCase(7, ExpectedResult = false)]
         public bool IsEvenNumber_InputOddInteger_ReturnTrue(int oddNumber)
         {
@@ -76,6 +76,18 @@ namespace UnitTestingLibrary
             Assert.IsTrue(isEven);
             Assert.That(isEven, Is.EqualTo(true));
 
+        }
+
+        [Test]
+        [TestCase(2.2, 1.2)]    // result 3.4
+        [TestCase(2.23, 1.24)]  // result 3.47
+        public void SumNumberDoubleType_InputTwoNumberDoubleType_ReturnRightValue(double firstNumber, double secondNUmber)
+        {
+            Operation op = new();
+
+            var result = op.SumNumberDoubleType(firstNumber, secondNUmber);
+
+            Assert.AreEqual(3.4, result, 0.1);
         }
     }
 }

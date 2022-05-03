@@ -13,5 +13,10 @@ namespace UnitTestingLibrary
         {
             return number % 2 == 0;
         }
+
+        public double SumNumberDoubleType(double firstNumber, double secondNumber)
+        {
+            return firstNumber + secondNumber;
+        }
     }
 }
