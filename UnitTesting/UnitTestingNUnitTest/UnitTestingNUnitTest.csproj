@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>UnitTestingLibrary</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,5 +14,8 @@
     <PackageReference Include="NUnit" Version="3.13.3" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.2.1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UnitTestingLibrary\UnitTestingLibrary.csproj" />
   </ItemGroup>
 </Project>
