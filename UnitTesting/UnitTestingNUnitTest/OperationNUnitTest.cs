@@ -47,18 +47,16 @@ namespace UnitTestingLibrary
         }
 
         [Test]
-        public void IsEvenNumber_InputEvenInteger_ReturnTrue()
+        [TestCase(3, ExpectedResult = false)]
+        [TestCase(5, ExpectedResult = true)]
+        [TestCase(7, ExpectedResult = false)]
+        public bool IsEvenNumber_InputOddInteger_ReturnTrue(int oddNumber)
         {
             //Arrange
             Operation op = new();
-            int inputNumber = 4;
 
-            //Act
-            bool isEven = op.IsEvenNumber(inputNumber);
-
-            //Assert
-            Assert.IsTrue(isEven);
-            Assert.That(isEven, Is.EqualTo(true));
+            //Act&Assert
+            return op.IsEvenNumber(oddNumber);
 
         }
 
