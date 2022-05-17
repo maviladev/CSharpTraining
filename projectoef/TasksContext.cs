@@ -18,6 +18,7 @@ class TasksContext: DbContext
             category.Property(p => p.Name).IsRequired().HasMaxLength(150);
 
             category.Property(p => p.Description);
+            category.Property(p => p.Weight);
 
         });
 
