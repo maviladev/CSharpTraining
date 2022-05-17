@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using projectoef.models;
-using projectoef.models;
 namespace projectoef;
  
 
