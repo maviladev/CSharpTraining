@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 //builder.Services.AddDbContext<TasksContext>(p => p.UseSqlServer("TasksDb"));
-builder.Services.AddSqlServer<TasksContext>("Data Source=SQL5054.site4now.net;Initial Catalog=DB;User Id=DB_admin;Password=Password_2022");
+builder.Services.AddSqlServer<TasksContext>(builder.Configuration.GetConnectionString("cnTasks"));
 
 var app = builder.Build();
 
