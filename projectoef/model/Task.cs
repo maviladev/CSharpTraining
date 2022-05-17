@@ -5,20 +5,20 @@ namespace projectoef.models;
 
 public class Task
 {
-    [Key]
+    //[Key]
     public Guid TaskId { get; set; }
-    [ForeignKey("CategoryId")]
+    //[ForeignKey("CategoryId")]
     public Guid CategoryId { get; set; }
-    [Required]
-    [MaxLength(200)]
+    //[Required]
+    //[MaxLength(200)]
     public string Title { get; set; }
-    [MaxLength(500)]
+    //[MaxLength(500)]
     public string Description { get; set; }
-    [Required]
+    //[Required]
     public Priority PriorityTask { get; set; }
     public DateTime CreationDate { get; set; }
     public virtual Category Category { get; set; }
-    [NotMapped] // Let us omit this field in the db
+    //[NotMapped] // Let us omit this field in the db
     public string Resume { get; set; } 
 }
 
