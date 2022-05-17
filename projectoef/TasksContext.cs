@@ -11,6 +11,12 @@ class TasksContext: DbContext
     public TasksContext(DbContextOptions<TasksContext> options) : base(options) { }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder){
+
+        List<Category> categoriesInit = new List<Category>();
+        categoriesInit.Add(new Category() { CategoryId = Guid.Parse("1425a7b8-1345-49ad-9755-5095f34f4aaf"), Description = "Activities to do", Name = "Pending Activities", Weight = 20});
+        categoriesInit.Add(new Category() { CategoryId = Guid.Parse("1425a7b8-1345-49ad-9755-5095f34f4a02"), Description = "Activities to do", Name = "Personal Activities", Weight = 50});
+
+
         modelBuilder.Entity<Category>(category => {
             
             category.ToTable("Category");
@@ -20,7 +26,13 @@ class TasksContext: DbContext
             category.Property(p => p.Description);
             category.Property(p => p.Weight);
 
+            category.HasData(categoriesInit);
+
         });
+
+        List<models.Task> tasksInit = new List<models.Task>();
+        tasksInit.Add(new models.Task() { TaskId = Guid.Parse("1425a7b8-1345-49ad-9755-5095f34f4a10"), CategoryId = Guid.Parse("1425a7b8-1345-49ad-9755-5095f34f4aaf"), Title = "Task 1", Description = "Task 1 Desc", PriorityTask = Priority.Middle, CreationDate = DateTime.Now });
+        tasksInit.Add(new models.Task() { TaskId = Guid.Parse("1425a7b8-1345-49ad-9755-5095f34f4a00"), CategoryId = Guid.Parse("1425a7b8-1345-49ad-9755-5095f34f4a02"), Title = "Task 2", Description = "Task 2 Desc", PriorityTask = Priority.Slow, CreationDate = DateTime.Now });
 
         modelBuilder.Entity<projectoef.models.Task>(task => {
 
@@ -33,6 +45,8 @@ class TasksContext: DbContext
             task.Property(t => t.PriorityTask).IsRequired();
             task.Property(t => t.CreationDate);
             task.Ignore(t => t.Resume);
+
+            task.HasData(tasksInit);
         });
     }
 
