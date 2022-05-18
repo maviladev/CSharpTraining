@@ -18,7 +18,22 @@ app.MapGet("/dbconexion", async ([FromServices] TasksContext dbContext) =>
 
 app.MapGet("/api/tasks", async ([FromServices] TasksContext dbContext) => 
 {
-    return Results.Ok(dbContext.Tasks.Include(c => c.Category).Where(t => t.PriorityTask == projectoef.models.Priority.Slow));
+    return Results.Ok(dbContext.Tasks.Include(c => c.Category));
+});
+
+app.MapPost("/api/tasks", async ([FromServices] TasksContext dbContext, [FromBody] projectoef.models.Task task) => 
+{
+    task.TaskId = Guid.NewGuid();
+    task.CreationDate = DateTime.Now;
+    await dbContext.AddAsync(task);
+
+    // Another way to do this
+    // await dbContext.Tasks.AddAsync(task);
+
+    await dbContext.SaveChangesAsync();
+
+    return Results.Ok();
+
 });
 
 app.Run();
