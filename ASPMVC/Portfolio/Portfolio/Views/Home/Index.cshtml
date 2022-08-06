@@ -1,9 +1,11 @@
-﻿@{
+﻿@model Person
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">@ViewBag.Name</h1>
+    <h1 class="display-4">@Model.Name tengo @Model.Age años</h1>
     <h2>Soy un desarrollador de software que trabaja con tecnologías .NET</h2>
     <img src="~/images/me.jpeg" alt="Foto Marcos Avila"
          class="my-picture"/>

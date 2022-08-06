@@ -15,8 +15,13 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        ViewBag.Name = "Marcos Avila 2";
-        return View();
+        var person = new Person()
+        {
+            Name = "Marcos Avila From Class",
+            Age = 34
+        };
+
+        return View("Index", person);
     }
 
     public IActionResult Privacy()
