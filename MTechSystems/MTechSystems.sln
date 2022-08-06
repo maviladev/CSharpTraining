@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1700.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MTechSystems", "MTechSystems\MTechSystems.csproj", "{BAE5CC06-9C8F-4A63-B023-B37BF7AAB841}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MTechSystems_NUnit", "MTechSystems_NUnit\MTechSystems_NUnit.csproj", "{2CC5016C-7592-496B-9A27-FCBC39720688}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BAE5CC06-9C8F-4A63-B023-B37BF7AAB841}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAE5CC06-9C8F-4A63-B023-B37BF7AAB841}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAE5CC06-9C8F-4A63-B023-B37BF7AAB841}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAE5CC06-9C8F-4A63-B023-B37BF7AAB841}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CC5016C-7592-496B-9A27-FCBC39720688}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CC5016C-7592-496B-9A27-FCBC39720688}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CC5016C-7592-496B-9A27-FCBC39720688}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CC5016C-7592-496B-9A27-FCBC39720688}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3DD6317B-7AFA-48F5-A474-C2602FE8646D}
+	EndGlobalSection
+EndGlobal
