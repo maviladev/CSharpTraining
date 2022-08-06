@@ -1,4 +1,6 @@
-﻿namespace Portfolio;
+﻿using Portfolio.Services;
+
+namespace Portfolio;
 
 public class Program
 {
@@ -9,6 +11,7 @@ public class Program
         // Add services to the container.
         builder.Services.AddControllersWithViews();
         builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
+        builder.Services.AddTransient<IProjectsRepository, ProjectsRepository>();
 
         var app = builder.Build();
 
