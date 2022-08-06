@@ -18,7 +18,7 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        
+        _logger.LogInformation("Este es un mensaje de log");
         var projects = projectsRepository.GetProjects().Take(3).ToList();
         var model = new HomeIndexDTO() { Projects = projects };
         return View(model);
@@ -35,6 +35,12 @@ public class HomeController : Controller
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+    }
+
+    public IActionResult Projects()
+    {
+        var projects = projectsRepository.GetProjects();
+        return View(projects);
     }
 }
 

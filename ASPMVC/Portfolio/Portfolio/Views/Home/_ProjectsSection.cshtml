@@ -1,0 +1,21 @@
+﻿@model IEnumerable<ProjectDTO>
+
+@{
+
+    ViewData["Title"] = "Proyectos";
+}
+
+
+@if (Model is not null)
+{
+    <partial name="_ProjectsList" model="Model" />
+}
+
+
+
+
+
+
+
+
+
