@@ -1,4 +1,4 @@
-﻿
+﻿@model HomeIndexDTO
 
 @{
     ViewData["Title"] = "Home Page";
@@ -7,3 +7,31 @@
 <partial name="_Presentation" />
 
 <partial name="_Skills" />
+
+@if (Model.Projects is not null)
+    {
+        <div class="text-center" style="padding-top: 6rem;">
+            <h1>Mis trabajos recientes</h1>
+            <p>Aquí puedes ver algunos de mis trabajos más recientes.</p>
+        </div>
+
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                @foreach (var project in Model.Projects)
+                    {
+                        <div class="col">
+                            <div class="card h-100">
+                                <img src="@project.ImageURL" class="card-img-top" alt="Project Image" />
+                                <div class="card-body">
+                                    <h5 class="card-title">@project.Title</h5>
+                                    <p class="card-text">@project.Desciption</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a class="btn btnprimary" href="@project.Link" target="_blank" rel="noopener noreferrer">Visitar</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+            </div>
+        </div>
+    }
