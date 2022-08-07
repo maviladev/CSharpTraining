@@ -9,11 +9,13 @@ public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
     private readonly IProjectsRepository projectsRepository;
+    private readonly ISendGridEmailService emailService;
 
-    public HomeController(ILogger<HomeController> logger, IProjectsRepository projectsRepository)
+    public HomeController(ILogger<HomeController> logger, IProjectsRepository projectsRepository, ISendGridEmailService emailService)
     {
         _logger = logger;
         this.projectsRepository = projectsRepository;
+        this.emailService = emailService;
     }
 
     public IActionResult Index()
@@ -23,8 +25,6 @@ public class HomeController : Controller
         var model = new HomeIndexDTO() { Projects = projects };
         return View(model);
     }
-
-    
 
     public IActionResult Privacy()
     {
@@ -41,6 +41,25 @@ public class HomeController : Controller
     {
         var projects = projectsRepository.GetProjects();
         return View(projects);
+    }
+
+    public IActionResult Contact()
+    {
+        return View();
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Contact(ContactDTO data)
+    {
+        await emailService.Send(data);
+
+        return RedirectToAction("ThankYou");
+    }
+
+    public IActionResult ThankYou()
+    {
+
+        return View();
     }
 }
 

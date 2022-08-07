@@ -12,6 +12,7 @@ public class Program
         builder.Services.AddControllersWithViews();
         builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
         builder.Services.AddTransient<IProjectsRepository, ProjectsRepository>();
+        builder.Services.AddTransient<ISendGridEmailService, SendGridEmailService>();
 
         var app = builder.Build();
 
