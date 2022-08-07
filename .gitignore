@@ -350,3 +350,5 @@ MigrationBackup/
 .ionide/
 
 projectoef/appsettings.json
+
+ASPMVC/Portfolio/Portfolio/appsettings.Development.json
