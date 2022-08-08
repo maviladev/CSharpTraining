@@ -352,3 +352,5 @@ MigrationBackup/
 projectoef/appsettings.json
 
 ASPMVC/Portfolio/Portfolio/appsettings.Development.json
+
+ASPMVC/BudgetManagement/BudgetManagement/appsettings.json
