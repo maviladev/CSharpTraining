@@ -2,8 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Views\AccountsTypes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\AccountsTypes\" />
+  </ItemGroup>
 </Project>
